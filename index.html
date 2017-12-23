@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>2018 മലയാളം കലണ്ടർ</title>
+    <meta property="og:title" content="2018 മലയാളം കലണ്ടർ" />
+    <meta property="og:description" content="2018 Malayalam Calender in a simple and intuitive way" />
+    <meta property="og:url" content="http://mcalender2018.jobinskumar.info/" />
+    <meta property="og:type" content="website" />	
+    <meta name="Keywords" content="2018 Malayalam Calender, 2018 മലയാളം കലണ്ടർ">
+    <link rel="icon" href="img/jobin.png">
+    <style type="text/css">
+      .col-md-1 {
+        width: 9%;
+        display: inline-block;
+        vertical-align: top;
+        max-height: 100vh;
+        overflow: auto;
+      }
+      .col-md-8 {
+        width: 79%;
+        display: inline-block;
+        height: 100vh;
+        overflow-y: scroll;
+      }
+      img {
+        width: 100%;
+      }
+      .container {
+        text-align: center;
+      }
+      body {
+        overflow: hidden;
+      }
+      .col-md-1 img {
+        cursor: pointer;
+      }
+      .col-md-1 img:hover {
+        width: 101%;
+      }
+      @media only screen and (max-width: 1024px) {
+        .col-md-1 {
+          display: none;
+        }
+        .col-md-8 {
+          width: 100%;
+        }
+      }
+    </style>
+    <style type="text/css">
+      ::-webkit-scrollbar {
+        width: 2px;
+        height: 2px;
+      }
+      ::-webkit-scrollbar-button {
+        width: 0px;
+        height: 0px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #a6a6a6;
+        border: 0px none #ffffff;
+        border-radius: 50px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #949494;
+      }
+      ::-webkit-scrollbar-thumb:active {
+        background: #000000;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f7f7f7;
+        border: 0px none #ffffff;
+        border-radius: 50px;
+      }
+      ::-webkit-scrollbar-track:hover {
+        background: #e1e1e1;
+      }
+      ::-webkit-scrollbar-track:active {
+        background: #333333;
+      }
+      ::-webkit-scrollbar-corner {
+        background: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-md-1">
+        <img src="img/01sm.jpg" onclick="scrollToMonth('jan')">
+        <img src="img/02sm.jpg" onclick="scrollToMonth('feb')">
+        <img src="img/03sm.jpg" onclick="scrollToMonth('mar')">
+        <img src="img/04sm.jpg" onclick="scrollToMonth('apr')">
+        <img src="img/05sm.jpg" onclick="scrollToMonth('may')">
+        <img src="img/06sm.jpg" onclick="scrollToMonth('jun')">
+      </div>
+      <div id="calenderView" class="col-md-8">
+        <img id="jan" src="img/01.jpg">
+        <img id="feb" src="img/02.jpg">
+        <img id="mar" src="img/03.jpg">
+        <img id="apr" src="img/04.jpg">
+        <img id="may" src="img/05.jpg">
+        <img id="jun" src="img/06.jpg">
+        <img id="jul" src="img/07.jpg">
+        <img id="aug" src="img/08.jpg">
+        <img id="sep" src="img/09.jpg">
+        <img id="oct" src="img/10.jpg">
+        <img id="nov" src="img/11.jpg">
+        <img id="dec" src="img/12.jpg">
+      </div>
+      <div class="col-md-1">
+        <img src="img/07sm.jpg" onclick="scrollToMonth('jul')">
+        <img src="img/08sm.jpg" onclick="scrollToMonth('aug')">
+        <img src="img/09sm.jpg" onclick="scrollToMonth('sep')">
+        <img src="img/10sm.jpg" onclick="scrollToMonth('oct')">
+        <img src="img/11sm.jpg" onclick="scrollToMonth('nov')">
+        <img src="img/12sm.jpg" onclick="scrollToMonth('dec')">
+      </div>
+    </div>
+	<script>
+    var monthList = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'noc', 'dec'];
+    var currentMonth = new Date().getMonth();
+    var calenderView = document.getElementById('calenderView');
+    function scrollToMonth(month) {
+      calenderView.querySelector('#' + month).scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
+    setTimeout(function() {
+      scrollToMonth(monthList[currentMonth]);
+    }, 500);
+	</script>
+  </body>
+</html>
